@@ -1,0 +1,10 @@
+node_modules
+/server/public
+.DS_Store
+package-lock.json
+/.idea
+/**/*.psd
+/**/Thumbs.db
+/**/*.DS_Store
+*.lock
+*.log
