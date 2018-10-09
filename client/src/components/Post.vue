@@ -13,7 +13,7 @@
       <button type="submit" class="btn btn-success w-100">Post</button>
     </form>
     <hr>
-    <p class="alert alert-danger" v-if="error">{{error}}</p>
+    <p class="alert alert-danger text-danger" v-if="error">{{error}}</p>
     <div class="row posts-container">
       <div class="col-sm-6"
            v-for="(post, index) in posts"
