@@ -1,5 +1,5 @@
 const express = require("express");
-const monodb = require("mongodb");
+const mongodb = require("mongodb");
 
 const router = express.Router();
 
@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const posts = await loadPostsCollection();
   await posts.insertOne({
+    title: req.body.title,
     text: req.body.text,
     createdAt: new Date()
   });
@@ -27,7 +28,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 async function loadPostsCollection() {
-  const client = await monodb.MongoClient.connect(
+  const client = await mongodb.MongoClient.connect(
     "mongodb://bakai:abc123@ds125693.mlab.com:25693/mevn_microposts",
     {
       useNewUrlParser: true
